@@ -16,5 +16,24 @@ function core(){
 	{
 		echo "Dijitalka Core Eklentisi";
 	}
+	function tableCreat()
+	{
+		 global $wpdb;
+		 $charset = $wpdb->get_charset_colate();
+		 $tableName = "dijitalka_core";
+
+		 $sql = "
+		 CREATE TABLE $tableName (
+		     id mediumint(9) NOT NULL AUTO_INCREMENT,
+		     token VARCHAR(500) NOT NULL,
+		     islemLink VARCHAR(500) NOT NULL,
+		     uLink VARCHAR(500) NOT NULL,
+		     paylasim VARCHAR(500) NOT NULL,
+		     durum VARCHAR(500) DEFAULT 1 NOT NULL
+		      UNIQUE KEY id (id))$charset";
+		 require_once ABSPATH."wp-admin/includes/upgrade.php";
+		 dbDelta($sql);
+	}
+	tableCreat();
 }
 ?>
