@@ -14,7 +14,7 @@ function core(){
  add_menu_page('DİJİTALKA','DİJİTALKA', 'manage_options', 'dijitalka', 'first');
 	function first()
 	{
-		echo "Ayarlar";
+		echo "Dijitalka Core Eklentisi";
 	}
 }
 ?>
